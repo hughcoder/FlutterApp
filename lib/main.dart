@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             title: Text('Flutter rolling demo'),
           ),
           body: Center(
-            child: TextWidget(),
+            child:  ButtonWidget()
           ),
         ));
   }
@@ -35,7 +35,7 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Put your text here",
+      "Put your text here dddddd",
       style: TextStyle(
           color: Colors.blue,
           fontSize: 16.0,
@@ -44,6 +44,33 @@ class TextWidget extends StatelessWidget {
     );
   }
 }
+
+class ImageWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539766773943&di=4ebf97fa06db7acdb69045e60a15fc57&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2F9cee584be54d5808b0e3b0f92971499b7cad9c52.jpg",
+      width: 200.0,
+      height: 150.0,
+    );
+  }
+}
+
+class ButtonWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var flatBtn = FlatButton(
+      onPressed: () => print('FlatButton pressed'),
+      child: Text('BUTTON'),
+    );
+    var raisedButton = RaisedButton(
+      onPressed: () => print('RaisedButton pressed'),
+      child: Text('BUTTON'),
+    );
+    return flatBtn;
+  }
+}
+
 
 class RollingButton extends StatefulWidget {
   // StatefulWidget 需要实现这个方法，返回一个 State
