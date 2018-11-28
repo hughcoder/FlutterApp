@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'dart:async';
 import './View.dart';
 
-void main() => runApp(new View());
+void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -22,10 +24,10 @@ class MyApp extends StatelessWidget {
 //          primarySwatch: Colors.blue,
 //        ),
         home: Scaffold(
-//          appBar: AppBar(
-//            title: Text('Flutter rolling demo'),
-//          ),
-          body: View(),
+          appBar: AppBar(
+            title: Text('Flutter rolling demo'),
+          ),
+          body: MessageForm(),
         ));
   }
 }
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
 /// Text
 
 class TextWidget extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -74,6 +78,9 @@ class ButtonWidget extends StatelessWidget {
 
 /// 文本输入框
 class MessageForm extends StatefulWidget {
+
+
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -83,6 +90,16 @@ class MessageForm extends StatefulWidget {
 
 class _MessageFormState extends State<MessageForm> {
   var editController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    print("cccc");
+    debugPrint('_onPressed');
+    var data =[1,2,3,4];
+    var stream = new Stream.fromIterable(data);
+    stream.listen((e)=>print(e), onDone: () => print('Done'));
+  }
 
   @override
   Widget build(BuildContext context) {

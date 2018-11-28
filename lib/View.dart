@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 void main() => runApp(new View());
 
 class View extends StatelessWidget {
+
+
+  initState(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -58,6 +64,7 @@ class _TitleSection extends StatelessWidget {
   final int starCount;
 
   _TitleSection(this.title, this.subtitle, this.starCount);
+
 
   @override
   Widget build(BuildContext context) {
